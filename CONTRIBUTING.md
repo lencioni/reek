@@ -10,6 +10,9 @@ only to find us suggesting large parts should be rewritten.
 Don’t hesitate to offer trivial fixes (spelling, better naming
 ideas, etc.) – we’ll let you know if you’re overdoing it. :)
 
+If you don’t feel like getting your hands dirty with code do feel free
+to work on the [wiki](https://github.com/troessner/reek/wiki). :)
+
 
 
 ## Reporting Issues
@@ -55,6 +58,15 @@ git checkout -b your_feature_or_fix_name
 Add new tests which make sure that your new feature works or
 demonstrate that your fix was needed; please also [write good commit
 messages](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html).
+
+Remember that you can run particular tests and scenarios:
+
+```bash
+bundle exec rspec spec/your/file_spec.rb            # Runs all tests in spec/your/file_spec.rb
+bundle exec rspec spec/your/file_spec.rb:23         # Runs test in line 23
+bundle exec cucumber features/your_file.feature     # Runs all scenarios in your_file.feature
+bundle exec cucumber features/your_file.feature:23  # Runs scenario at line 23
+```
 
 Once you’re happy with your feature / fix – or want to
 share it as a work-in-progress and request comments – once

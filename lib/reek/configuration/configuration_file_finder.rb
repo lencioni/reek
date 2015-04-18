@@ -31,6 +31,8 @@ module Reek
 
       def find_by_dir(start)
         start.ascend do |dir|
+          # FIXME: switch to globbing once Rubinius supports it like MRI/JRuby:
+          # found = Pathname.glob("#{dir}/{.reek,*.reek}").sort.find(&:file?)
           files = dir.children.select(&:file?).sort
           found = files.find { |file| file.to_s.end_with?('.reek') }
           return found if found
